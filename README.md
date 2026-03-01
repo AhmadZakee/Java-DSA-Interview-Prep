@@ -11,7 +11,7 @@ This repository is continuously updated with clear explanations, optimized code,
 
 ---
 
-## 📌 Topics Covered
+## 📌 Topics will be Covered
 
 ### ☕ Java
 - Java Fundamentals  
