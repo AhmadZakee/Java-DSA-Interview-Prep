@@ -1,0 +1,120 @@
+>>>>> Recursion day_01!
+Definition :
+Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem until a base condition is reached.
+Without a base case, recursion will continue forever and cause Stack Overflow Error.
+Recursion breaks a big problem into smaller sub-problems of the same type.
+>>>> Practice :
+
+01. Print 10 to 1!
+.
+.
+public class Main {
+    public static void main(String[] args) {
+        Print(10);
+    }
+
+    static int Print(int n) {
+        if (n < 1) {
+            return 1;
+        }
+        System.out.println(n);
+        return Print(n - 1);
+    }
+}
+
+01. Print 1 to 10!
+.
+.
+public class Main {
+    public static void main(String[] args) {
+        Print(1);
+    }
+
+    static int Print(int n) {
+        if (n > 10) {
+            return 10;
+        }
+        System.out.println(n);
+        return Print(n + 1);
+    }
+}
+
+03. Sum of n natural number!
+.
+.
+public class Main {
+    public static void main(String[] args) {
+        int n = 50;
+        System.out.println(Print(n));
+    }
+
+    static int Print(int n) {
+        if (n == 1) {
+            return 1;
+        }
+
+        return n + Print(n - 1);
+    }
+}
+
+04. Factorial of number ?
+.
+.
+public class Main {
+    public static void main(String[] args) {
+        int n = 10;
+        System.out.println(Print(n));
+    }
+
+    static int Print(int n) {
+        if (n == 1) {
+            return 1;
+        }
+
+        return n * Print(n - 1);
+    }
+}
+
+___fibonacci number ?
+.
+.
+public class Main {
+    public static void main(String[] args) {
+    int ans = print(7);
+    System.out.println(ans);
+    }
+    static int print(int n) {
+      if(n < 2) {
+        return n;
+      }
+      return print(n-1)+print(n-2);
+}
+}
+
+>>>> Binary Search Using Recursion!
+.
+.
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {32,21,4,344,3,1,5};
+        int target = 344;
+        System.out.println(Search(arr,target,0,arr.length-1));
+    }
+
+    static int Search(int[] arr, int target, int start, int end) {
+        if(start > end ) return -1;
+
+        int mid = start + (end - start) / 2;
+
+        if(arr[mid] == target) {
+            return mid;
+        }
+
+        if(arr[mid] > target) {
+            return Search(arr, target, start, mid - 1);
+        }
+
+        // if(arr[mid] < target) 
+        return Search(arr, target, mid + 1, end);
+    }
+}
